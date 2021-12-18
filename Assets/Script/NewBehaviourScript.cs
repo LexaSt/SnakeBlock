@@ -6,18 +6,22 @@ public class NewBehaviourScript : MonoBehaviour
 {
     public GameObject prefab;
     private List<Vector3> tails = new List<Vector3>();
+    private List<Transform> snakeCircles = new List<Transform>();
     private Vector3 position;
     private Vector3 firstPositionTail;
     private GameObject tail;
     public float speed;
-    public Rigidbody HeadSnake;
-    //public float sens;
+    public Transform HeadSnake;
+    public float sensRotate;
     public float howMuchTailsX2;
+   // public float diametr;
 
 
     void Start()
     {
         position = transform.position;
+        tails.Add(position);
+        
         firstPositionTail = new Vector3(position.x, position.y, position.z - 0.5f);
         //print(position);
         //print(firstPositionTail);
@@ -33,19 +37,26 @@ public class NewBehaviourScript : MonoBehaviour
             tail.transform.position = new Vector3(firstPositionTail.x, firstPositionTail.y, firstPositionTail.z - i);
             //print("Позиция префаба" + tail.transform.position);
             tails.Add(tail.transform.position);
+            snakeCircles.Add(tail.transform);
         }
     }
 
     void movingTails()
     {
-        Vector3 newPos = HeadSnake.position - position;
-        print("Разница между двумя позициями " + newPos);
-
-        for (int i = 0; i < howMuchTailsX2 * 2; i++)
+        float distance = ((Vector3)HeadSnake.position - tails[0]).magnitude;
+        if (distance > 0.5)
         {
-            tails[i] = tails[i] + newPos;
-            tails[i] = new Vector3(tails[i].x, tails[i].y, tails[i].z);
-            print("хвост" + i + tails[i]);
+            Vector3 direction = ((Vector3)HeadSnake.position - tails[0]).normalized;
+
+            tails.Insert(0, tails[0] + direction*0.5f);
+            //tails.Insert(0, HeadSnake.position);
+            tails.RemoveAt(tails.Count - 1);
+            distance = -1;
+
+            for (int i = 0; i < snakeCircles.Count; i++)
+            {
+                snakeCircles[i].position = Vector3.Lerp(tails[i + 1], tails[i], distance);
+            }
         }
 
     }
@@ -56,23 +67,14 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void control()
     {
-        if (Input.GetKey("a"))
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.D))
         {
-            HeadSnake.velocity = new Vector3(-speed, 0, 0);
+            transform.Rotate(Vector3.up * sensRotate * Time.deltaTime);
         }
-
-        else if (Input.GetKey("d"))
+        if (Input.GetKey(KeyCode.A))
         {
-
-            HeadSnake.velocity = new Vector3(speed, 0, 0);
-        }
-        else if (Input.GetKey("w"))
-        {
-            HeadSnake.velocity = new Vector3(0, 0, speed);
-        }
-        else if (Input.GetKey("s"))
-        {
-            HeadSnake.velocity = new Vector3(0, 0, -speed);
+            transform.Rotate(Vector3.up *-1* sensRotate * Time.deltaTime);
         }
     }
 
