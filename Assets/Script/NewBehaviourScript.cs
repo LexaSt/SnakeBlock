@@ -15,17 +15,21 @@ public class NewBehaviourScript : MonoBehaviour
     void Start()
     {
         GetNewPrefab();
+       
     }
 
 
     void GetNewPrefab()
     {
-        
+        position = transform.position;
+        firstPositionTail = new Vector3(position.x + 1, position.y, position.z + 1);
+        print(position);
+        print(firstPositionTail);
         for (int i = 0; i < 2; i++)
         {
             tail = new GameObject();
             tail = Instantiate(prefab);
-           // tail.transform.position = new Vector3 (firstPositionTail.x + i, firstPositionTail.y, firstPositionTail.z+i);
+            tail.transform.position = new Vector3 (firstPositionTail.x + i, firstPositionTail.y, firstPositionTail.z+i);
             print("Позиция префаба" + tail.transform.position);
             tails.Add(tail.transform.position);
         }
