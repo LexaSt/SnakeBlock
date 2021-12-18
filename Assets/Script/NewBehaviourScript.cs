@@ -14,22 +14,21 @@ public class NewBehaviourScript : MonoBehaviour
 
     void Start()
     {
-        GetNewPrefab();
-       
+        position = transform.position;
+        firstPositionTail = new Vector3(position.x, position.y, position.z-0.5f);
+        print(position);
+        print(firstPositionTail);
+        GetNewPrefab(); 
     }
 
 
     void GetNewPrefab()
     {
-        position = transform.position;
-        firstPositionTail = new Vector3(position.x + 1, position.y, position.z + 1);
-        print(position);
-        print(firstPositionTail);
-        for (int i = 0; i < 2; i++)
+        for (float i = 0; i < 2; i=i+0.5f)
         {
             tail = new GameObject();
             tail = Instantiate(prefab);
-            tail.transform.position = new Vector3 (firstPositionTail.x + i, firstPositionTail.y, firstPositionTail.z+i);
+            tail.transform.position = new Vector3 (firstPositionTail.x, firstPositionTail.y, firstPositionTail.z - i);
             print("Позиция префаба" + tail.transform.position);
             tails.Add(tail.transform.position);
         }
@@ -38,16 +37,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private void Update()
     {
-        position = transform.position;
-        firstPositionTail = new Vector3(position.x + 1, position.y, position.z + 1);
-        print(position);
-        print(firstPositionTail);
-
-        for (int i = 0; i < 2; i++)
-        {
-            tail.transform.position = new Vector3(firstPositionTail.x + i, firstPositionTail.y, firstPositionTail.z + i);
-            print("Позиция префаба" + tail.transform.position);
-         
-        }
+        
+       
     }
 }
