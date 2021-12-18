@@ -44,11 +44,14 @@ public class NewBehaviourScript : MonoBehaviour
     void movingTails()
     {
         float distance = ((Vector3)HeadSnake.position - tails[0]).magnitude;
-        if (distance > 1)
+        if (distance > 0.5)
         {
+            Vector3 direction = ((Vector3)HeadSnake.position - tails[0]).normalized;
 
-            tails.Insert(0, HeadSnake.position);
+            tails.Insert(0, tails[0] + direction*0.5f);
+            //tails.Insert(0, HeadSnake.position);
             tails.RemoveAt(tails.Count - 1);
+            distance = -1;
 
             for (int i = 0; i < snakeCircles.Count; i++)
             {
