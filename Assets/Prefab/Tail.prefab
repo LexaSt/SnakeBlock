@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2850805962305228687}
   - component: {fileID: 2850805962305228680}
   - component: {fileID: 2850805962305228681}
-  - component: {fileID: -5941247428135504909}
+  - component: {fileID: 333940535602235988}
   m_Layer: 0
   m_Name: Tail
   m_TagString: Untagged
@@ -96,7 +96,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &-5941247428135504909
+--- !u!54 &333940535602235988
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
