@@ -11,7 +11,7 @@ public class NewBehaviourScript : MonoBehaviour
     private GameObject tail;
     public float speed;
     public Rigidbody HeadSnake;
-    public float sens;
+    //public float sens;
     public float howMuchTailsX2;
 
 
@@ -40,9 +40,19 @@ public class NewBehaviourScript : MonoBehaviour
     {
         Vector3 newPos = HeadSnake.position - position;
         print("Разница между двумя позициями " + newPos);
-       
-    
+
+        for (int i = 0; i < howMuchTailsX2 * 2; i++)
+        {
+            tails[i] = tails[i] + newPos;
+            tails[i] = new Vector3(tails[i].x, tails[i].y, tails[i].z);
+            print("хвост" + i + tails[i]);
+        }
+
     }
+
+
+
+    
 
     private void control()
     {
