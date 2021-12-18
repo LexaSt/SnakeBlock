@@ -343,7 +343,7 @@ SphereCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1777059561}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8baf7303a6b64bd4794beaf19f88b4c6, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -425,7 +425,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2850805962305228682, guid: b547cdd5bd5fa0c4094a464c1c2c6401, type: 3}
-  position: {x: 0, y: 0, z: 0}
+  speed: 5
+  HeadSnake: {fileID: 1777059562}
+  sens: 25
+  howMuchTailsX2: 1
 --- !u!1 &2036431613
 GameObject:
   m_ObjectHideFlags: 0
@@ -452,7 +455,7 @@ MeshCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036431613}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 8baf7303a6b64bd4794beaf19f88b4c6, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
@@ -516,7 +519,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036431613}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.0307691, y: -1.8772393, z: -0.04}
+  m_LocalPosition: {x: 0, y: -0.26, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
