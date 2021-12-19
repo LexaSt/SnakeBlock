@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class Snake : MonoBehaviour
 {
     public GameObject prefab;
     private List<Vector3> tails = new List<Vector3>();
@@ -64,14 +64,14 @@ public class NewBehaviourScript : MonoBehaviour
     {
         howMuchTails = 1;
         GetNewPrefab();
-        print(snakeCircles.Count);
+        print("Количество хвостов: " + snakeCircles.Count);
     }
     public void DelTails()
     {
         Destroy(snakeCircles[0].gameObject);
         snakeCircles.RemoveAt(0);
         tails.RemoveAt(1);
-        print(snakeCircles.Count);
+        print("Количество хвостов: " + snakeCircles.Count);
     }
 
    

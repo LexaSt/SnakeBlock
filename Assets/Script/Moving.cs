@@ -15,7 +15,7 @@ public class Moving : MonoBehaviour
     public float bounceSpeed;
 
 
-    private void MouseControl()
+    public void MouseControl()
     {
         if (Input.GetMouseButton(0))
         {
@@ -32,7 +32,7 @@ public class Moving : MonoBehaviour
         player.velocity = new Vector3(0 ,0, -bounceSpeed);
     }
 
-    private void control()
+    public void control()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
         

@@ -9,8 +9,7 @@ public class Break : MonoBehaviour
 
 
     void Start()
-    {
-        
+    {   
         liveBlock = Random.Range(1, 21);
         print("Жизней у блока в начале" + liveBlock);
     }
@@ -23,9 +22,13 @@ public class Break : MonoBehaviour
             if (collision.collider.TryGetComponent(out Moving moving))
             {
                 liveBlock = liveBlock - 1;
-                print("Collision" + liveBlock);
+                print("Жизней у блока " + liveBlock);
                 moving.Bounce();
             }
+            if (collision.collider.TryGetComponent(out Snake Snake))
+            {
+                Snake.DelTails();
+            }    
         }
         else if (liveBlock == 0)
         {
