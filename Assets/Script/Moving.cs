@@ -4,77 +4,44 @@ using UnityEngine;
 
 public class Moving : MonoBehaviour
 {
-    public float speed;
-    public float speed2;
-    public float tailDstance;
-    public Rigidbody Rigidbody;
-    public GameObject TailPrefab;
-    public int len;
-    private List<Transform> tails= new List<Transform>();
-    //private Transform _position;
+    public Rigidbody player;
+    private Vector3 previosMousePosition;
 
-    private void Start()
-    {
-        AddTailSanke();
+    public float speed;
+    public float sensRotate;
+    public float sensitivity=1f;
+
  
+    private void MouseControl()
+    {
+        if (Input.GetMouseButton(0))
+        {
+            Vector3 delta = Input.mousePosition - previosMousePosition;
+            player.AddForce(delta.x * sensitivity,0,0);
+        }
+        previosMousePosition = Input.mousePosition;
+    
+    
     }
+    private void control()
+    {
+        transform.Translate(Vector3.forward * speed * Time.deltaTime);
+        
+        if (Input.GetKey(KeyCode.D))
+        {
+            transform.Rotate(Vector3.up * sensRotate * Time.deltaTime);
+        }
+        if (Input.GetKey(KeyCode.A))
+        {
+            transform.Rotate(Vector3.up * -1 * sensRotate * Time.deltaTime);
+        }
+    }
+
+
     private void Update()
     {
-        moveTail();
-
-        if (Input.GetKey("a"))
-        {
-            Rigidbody.velocity = new Vector3(0, 0, -speed);
-        }
-
-        else if (Input.GetKey("d"))
-        {
-            Rigidbody.velocity = new Vector3(0, 0, speed);
-        }
-        else if (Input.GetKey("w"))
-        {
-            Rigidbody.velocity = new Vector3(-speed, 0, 0);
-        }
-        else if (Input.GetKey("s"))
-        {
-            Rigidbody.velocity = new Vector3(speed, 0, 0);
-        }
-
-       
-    }
-    private void AddTailSanke()
-    {
-        for (int i = 0;  i < len; i++)
-        {
-            GameObject tail = Instantiate(TailPrefab);
-            tails.Add(tail.transform);
-        } 
-    }
-
-
-    private void moveTail()
-    {
-        float sqrDistance = tailDstance * tailDstance;
-        Vector3 previosTail = transform.position;
-        foreach (var tail in tails)
-        {
-            if ((tail.position - previosTail).sqrMagnitude > sqrDistance)
-            {
-                var temp = tail.position;
-                tail.position = previosTail;
-                previosTail = temp;
-            }
-            else 
-            {
-                break;
-            }
+        MouseControl();
+        control();
         
-        
-        }
-
-
-        //_position.position = newPosition;
-
-
     }
 }

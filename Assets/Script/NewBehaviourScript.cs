@@ -10,11 +10,10 @@ public class NewBehaviourScript : MonoBehaviour
     private Vector3 position;
     private Vector3 firstPositionTail;
     private GameObject tail;
-    public float speed;
     public Transform HeadSnake;
-    public float sensRotate;
-    public float howMuchTailsX2;
-   // public float diametr;
+    private float howMuchTails = 0;
+    
+  
 
 
     void Start()
@@ -22,7 +21,7 @@ public class NewBehaviourScript : MonoBehaviour
         position = transform.position;
         tails.Add(position);
         
-        firstPositionTail = new Vector3(position.x, position.y, position.z - 0.5f);
+        firstPositionTail = new Vector3(position.x, position.y, position.z -1);
         //print(position);
         //print(firstPositionTail);
         GetNewPrefab();
@@ -31,7 +30,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     void GetNewPrefab()
     {
-        for (float i = 0; i < howMuchTailsX2; i = i + 0.5f)
+        for (float i = 0; i < howMuchTails; i ++)
         {
             tail = Instantiate(prefab);
             tail.transform.position = new Vector3(firstPositionTail.x, firstPositionTail.y, firstPositionTail.z - i);
@@ -44,12 +43,12 @@ public class NewBehaviourScript : MonoBehaviour
     void movingTails()
     {
         float distance = ((Vector3)HeadSnake.position - tails[0]).magnitude;
-        if (distance > 0.5)
+        if (distance > 1)
         {
-            Vector3 direction = ((Vector3)HeadSnake.position - tails[0]).normalized;
+            //Vector3 direction = ((Vector3)HeadSnake.position - tails[0]).normalized;
 
-            tails.Insert(0, tails[0] + direction*0.5f);
-            //tails.Insert(0, HeadSnake.position);
+           // tails.Insert(0, tails[0] + direction);
+            tails.Insert(0, HeadSnake.position);
             tails.RemoveAt(tails.Count - 1);
             distance = -1;
 
@@ -61,29 +60,26 @@ public class NewBehaviourScript : MonoBehaviour
 
     }
 
-
-
-    
-
-    private void control()
-    {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime);
-        if (Input.GetKey(KeyCode.D))
-        {
-            transform.Rotate(Vector3.up * sensRotate * Time.deltaTime);
-        }
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Rotate(Vector3.up *-1* sensRotate * Time.deltaTime);
-        }
-    }
-
-
     private void Update()
     {
-        
-        control();
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            howMuchTails = 1;
+            GetNewPrefab();
+            print(snakeCircles.Count);
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+
+           
+            Destroy(snakeCircles[0].gameObject);
+            snakeCircles.RemoveAt(0);
+            tails.RemoveAt(1);
+            print(snakeCircles.Count);
+        }
+
         movingTails();
+       
     }
 }
  
