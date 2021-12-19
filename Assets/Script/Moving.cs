@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,7 +12,9 @@ public class Moving : MonoBehaviour
     public float sensRotate;
     public float sensitivity=1f;
 
- 
+    public float bounceSpeed;
+
+
     private void MouseControl()
     {
         if (Input.GetMouseButton(0))
@@ -23,6 +26,12 @@ public class Moving : MonoBehaviour
     
     
     }
+
+    public void Bounce()
+    {
+        player.velocity = new Vector3(0 ,0, -bounceSpeed);
+    }
+
     private void control()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);

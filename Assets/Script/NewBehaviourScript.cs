@@ -60,6 +60,22 @@ public class NewBehaviourScript : MonoBehaviour
 
     }
 
+    public void AddTails()
+    {
+        howMuchTails = 1;
+        GetNewPrefab();
+        print(snakeCircles.Count);
+    }
+    public void DelTails()
+    {
+        Destroy(snakeCircles[0].gameObject);
+        snakeCircles.RemoveAt(0);
+        tails.RemoveAt(1);
+        print(snakeCircles.Count);
+    }
+
+   
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
