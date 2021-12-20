@@ -10,9 +10,10 @@ public class Moving : MonoBehaviour
 
     public float speed;
     public float sensRotate;
-    public float sensitivity=1f;
+    public float sensitivity;
 
-    public float bounceSpeed;
+    public float bounceSpeed=50;
+    public float bounceSide;
 
 
     public void MouseControl()
@@ -20,13 +21,19 @@ public class Moving : MonoBehaviour
         if (Input.GetMouseButton(0))
         {
             Vector3 delta = Input.mousePosition - previosMousePosition;
-            player.AddForce(delta.x * sensitivity,0,0);
+            player.transform.position = player.transform.position + new Vector3(delta.x * sensitivity,0,0);
+            if (player.transform.position.x >= 7)
+            { 
+                player.transform.position = new Vector3(7f, 0, player.transform.position.z);
+            }
+            if (player.transform.position.x <= -7)
+            {
+                player.transform.position = new Vector3(-7f, 0, player.transform.position.z);
+            }
         }
-        previosMousePosition = Input.mousePosition;
-    
-    
+        previosMousePosition = Input.mousePosition;   
     }
-
+   
     public void Bounce()
     {
         player.velocity = new Vector3(0 ,0, -bounceSpeed);
