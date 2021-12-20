@@ -6,7 +6,7 @@ public class Break : MonoBehaviour
 {
 
     private int liveBlock;
-
+    public TextMesh TextMesh;
 
     void Start()
     {   
@@ -18,13 +18,13 @@ public class Break : MonoBehaviour
     {
         if (liveBlock > 0)
         {
-
             if (collision.collider.TryGetComponent(out Moving moving))
             {
                 liveBlock = liveBlock - 1;
                 print("Жизней у блока " + liveBlock);
                 moving.Bounce();
             }
+
             if (collision.collider.TryGetComponent(out Snake Snake))
             {
                 Snake.DelTails();
@@ -34,7 +34,9 @@ public class Break : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
-
+    private void Update()
+    {
+        TextMesh.text = liveBlock.ToString();
+    }
 }

@@ -12,15 +12,13 @@ public class Snake : MonoBehaviour
     private GameObject tail;
     public Transform HeadSnake;
     private float howMuchTails = 0;
+    public TextMesh TextMesh;
     
-  
-
 
     void Start()
     {
         position = transform.position;
         tails.Add(position);
-        
         firstPositionTail = new Vector3(position.x, position.y, position.z -1);
         //print(position);
         //print(firstPositionTail);
@@ -46,7 +44,6 @@ public class Snake : MonoBehaviour
         if (distance > 1)
         {
             //Vector3 direction = ((Vector3)HeadSnake.position - tails[0]).normalized;
-
            // tails.Insert(0, tails[0] + direction);
             tails.Insert(0, HeadSnake.position);
             tails.RemoveAt(tails.Count - 1);
@@ -57,7 +54,6 @@ public class Snake : MonoBehaviour
                 snakeCircles[i].position = Vector3.Lerp(tails[i + 1], tails[i], distance);
             }
         }
-
     }
 
     public void AddTails()
@@ -86,8 +82,6 @@ public class Snake : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Z))
         {
-
-           
             Destroy(snakeCircles[0].gameObject);
             snakeCircles.RemoveAt(0);
             tails.RemoveAt(1);
@@ -95,7 +89,8 @@ public class Snake : MonoBehaviour
         }
 
         movingTails();
-       
+      
+        TextMesh.text = (snakeCircles.Count).ToString();
     }
 }
  

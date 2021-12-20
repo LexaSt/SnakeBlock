@@ -13,7 +13,7 @@ public class Moving : MonoBehaviour
     public float sensitivity;
 
     public float bounceSpeed=50;
-    public float bounceSide;
+ 
 
 
     public void MouseControl()
