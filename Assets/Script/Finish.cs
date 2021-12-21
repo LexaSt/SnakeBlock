@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
+
+    private float speed;
     void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out Moving moving))
@@ -13,6 +15,5 @@ public class Finish : MonoBehaviour
  
         }
     }
-
-
+    
 }

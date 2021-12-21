@@ -7,7 +7,7 @@ public class Moving : MonoBehaviour
 {
     public Rigidbody player;
     private Vector3 previosMousePosition;
-
+  
     public float speed;
     public float sensRotate;
     public float sensitivity;

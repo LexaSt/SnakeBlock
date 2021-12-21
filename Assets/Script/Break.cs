@@ -7,11 +7,12 @@ public class Break : MonoBehaviour
 
     private int liveBlock;
     public TextMesh TextMesh;
+    public 
 
     void Start()
     {   
-        liveBlock = Random.Range(1, 21);
-        print("Жизней у блока в начале" + liveBlock);
+        liveBlock = Random.Range(5, 21);
+        //print("Жизней у блока в начале " + liveBlock);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -21,7 +22,7 @@ public class Break : MonoBehaviour
             if (collision.collider.TryGetComponent(out Moving moving))
             {
                 liveBlock = liveBlock - 1;
-                print("Жизней у блока " + liveBlock);
+               // print("Жизней у блока " + liveBlock);
                 moving.Bounce();
             }
 

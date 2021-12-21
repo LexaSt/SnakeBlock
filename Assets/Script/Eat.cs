@@ -5,11 +5,12 @@ using UnityEngine;
 public class Eat : MonoBehaviour
 {
     private int quantityEat;
+    public TextMesh TextMesh;
 
 
     void Start()
     {
-        quantityEat = Random.Range(1, 11);
+        quantityEat = Random.Range(1, 4);
         print("Количество еды" + quantityEat);
     }
     void OnTriggerEnter(Collider other)
@@ -23,4 +24,11 @@ public class Eat : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    private void Update()
+    {
+        TextMesh.text = quantityEat.ToString();
+    }
+
 }
+
