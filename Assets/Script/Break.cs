@@ -7,12 +7,16 @@ public class Break : MonoBehaviour
 
     private int liveBlock;
     public TextMesh TextMesh;
-    public 
+    public GameMenu game;
+    public CameraFollow CameraFollow;
+    public Moving Moving;
 
     void Start()
     {   
         liveBlock = Random.Range(5, 21);
         //print("Жизней у блока в начале " + liveBlock);
+
+        game = FindObjectOfType<GameMenu>();
     }
 
     void OnCollisionEnter(Collision collision)
@@ -21,14 +25,25 @@ public class Break : MonoBehaviour
         {
             if (collision.collider.TryGetComponent(out Moving moving))
             {
-                liveBlock = liveBlock - 1;
+                liveBlock -= 1;
                // print("Жизней у блока " + liveBlock);
                 moving.Bounce();
             }
 
             if (collision.collider.TryGetComponent(out Snake Snake))
             {
-                Snake.DelTails();
+                if (Snake.snakeCircles.Count == 0)
+                {
+                    game.Over();
+                   // moving.speed = 0;
+                   // moving.sensitivity = 0;
+
+                }
+                else
+                {
+                    Snake.DelTails();
+                }
+                
             }    
         }
         else if (liveBlock == 0)

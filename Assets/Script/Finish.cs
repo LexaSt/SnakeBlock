@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Finish : MonoBehaviour
 {
-
-    private float speed;
+    public GameMenu GameMenu;
+    public Stage Stage;
+   
     void OnTriggerExit(Collider other)
     {
         if (other.TryGetComponent(out Moving moving))
         {
-            moving.speed = 0;
-            print("WIIINNNNEEEER");
+            //Stage.levelIndex += 1; 
+            GameMenu.OnFinish();
  
         }
     }

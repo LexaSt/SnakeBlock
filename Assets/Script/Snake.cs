@@ -6,13 +6,14 @@ public class Snake : MonoBehaviour
 {
     public GameObject prefab;
     private List<Vector3> tails = new List<Vector3>();
-    private List<Transform> snakeCircles = new List<Transform>();
+    public List<Transform> snakeCircles = new List<Transform>();
     private Vector3 position;
     private Vector3 firstPositionTail;
     private GameObject tail;
-    public Transform HeadSnake;
+    public GameObject HeadSnake;
     private float howMuchTails = 0;
     public TextMesh TextMesh;
+    //public Game game;
     
 
     void Start()
@@ -40,12 +41,12 @@ public class Snake : MonoBehaviour
 
     void movingTails()
     {
-        float distance = ((Vector3)HeadSnake.position - tails[0]).magnitude;
+        float distance = ((Vector3)HeadSnake.transform.position - tails[0]).magnitude;
         if (distance > 1)
         {
             //Vector3 direction = ((Vector3)HeadSnake.position - tails[0]).normalized;
            // tails.Insert(0, tails[0] + direction);
-            tails.Insert(0, HeadSnake.position);
+            tails.Insert(0, HeadSnake.transform.position);
             tails.RemoveAt(tails.Count - 1);
             distance = -1;
 
@@ -60,34 +61,20 @@ public class Snake : MonoBehaviour
     {
         howMuchTails = 1;
         GetNewPrefab();
-        print("Количество хвостов: " + snakeCircles.Count);
+       // print("Количество хвостов: " + snakeCircles.Count);
     }
     public void DelTails()
     {
         Destroy(snakeCircles[0].gameObject);
         snakeCircles.RemoveAt(0);
         tails.RemoveAt(1);
-        print("Количество хвостов: " + snakeCircles.Count);
+        //print("Количество хвостов: " + snakeCircles.Count);
+        
     }
 
-   
     
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            howMuchTails = 1;
-            GetNewPrefab();
-            print(snakeCircles.Count);
-        }
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            Destroy(snakeCircles[0].gameObject);
-            snakeCircles.RemoveAt(0);
-            tails.RemoveAt(1);
-            print(snakeCircles.Count);
-        }
-
         movingTails();
       
         TextMesh.text = (snakeCircles.Count).ToString();

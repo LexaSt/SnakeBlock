@@ -13,6 +13,7 @@ public class Moving : MonoBehaviour
     public float sensitivity;
 
     public float bounceSpeed=50;
+   
  
 
 
@@ -53,6 +54,8 @@ public class Moving : MonoBehaviour
         }
     }
 
+    public void Over()
+    { print("dsdfdfsdfsdsfdsd"); }
 
     private void Update()
     {
