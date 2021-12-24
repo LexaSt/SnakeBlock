@@ -13,8 +13,9 @@ public class Snake : MonoBehaviour
     public GameObject HeadSnake;
     private float howMuchTails = 0;
     public TextMesh TextMesh;
-    //public Game game;
-    
+    public GameObject ParticleSystemBreackBlock;
+    public GameObject fireWork;
+
 
     void Start()
     {
@@ -44,8 +45,6 @@ public class Snake : MonoBehaviour
         float distance = ((Vector3)HeadSnake.transform.position - tails[0]).magnitude;
         if (distance > 1)
         {
-            //Vector3 direction = ((Vector3)HeadSnake.position - tails[0]).normalized;
-           // tails.Insert(0, tails[0] + direction);
             tails.Insert(0, HeadSnake.transform.position);
             tails.RemoveAt(tails.Count - 1);
             distance = -1;
@@ -78,5 +77,26 @@ public class Snake : MonoBehaviour
       
         TextMesh.text = (snakeCircles.Count).ToString();
     }
+
+    public void DestroyBlock()
+    {
+        StartCoroutine(DestroyCorotune());
+    }
+
+    IEnumerator DestroyCorotune()
+    {
+        ParticleSystemBreackBlock.SetActive(!ParticleSystemBreackBlock.activeSelf);
+        yield return new WaitForSeconds(0.5f);
+        ParticleSystemBreackBlock.SetActive(!ParticleSystemBreackBlock.activeSelf);
+    }
+
+
+    public void GoFirework()
+    {
+        fireWork.SetActive(!fireWork.activeSelf);
+    }
+    
+
 }
+
  

@@ -10,6 +10,9 @@ public class GameMenu : MonoBehaviour
     public int scoreLevel;
     public int scoreAllLevel;
     public Finish Finish;
+    //public GameObject Level;
+   // Level.SetActive(!Level.activeSelf);
+
     public enum game
     {
         Playing,
@@ -33,7 +36,7 @@ public class GameMenu : MonoBehaviour
         Moving = FindObjectOfType<Moving>();
     }
 
-    public void Over()
+      public void Over()
     {
         if (gameCurrent != game.Playing) return;
 
@@ -47,7 +50,6 @@ public class GameMenu : MonoBehaviour
     public void OnFinish()
     {
         if (gameCurrent != game.Playing) return;
-
         gameCurrent = game.Win;
         GetScore();
         Moving.speed = 0;
@@ -67,10 +69,17 @@ public class GameMenu : MonoBehaviour
         }
     }
     private const string LevelIndexKey = "LevelIndex";
+
+
+
+
     private void ReloadLevel()
     {
        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-  
+
+
+
+
 }

@@ -10,12 +10,14 @@ public class Break : MonoBehaviour
     public GameMenu game;
     public CameraFollow CameraFollow;
     public Moving Moving;
+    public Snake snake;
+   
 
     void Start()
     {   
         liveBlock = Random.Range(4, 10);
         //print("Жизней у блока в начале " + liveBlock);
-
+        snake = FindObjectOfType<Snake>();
         game = FindObjectOfType<GameMenu>();
     }
 
@@ -44,6 +46,7 @@ public class Break : MonoBehaviour
         }
         else if (liveBlock == 0)
         {
+            snake.DestroyBlock();
             Destroy(gameObject);
         }
     }
@@ -51,4 +54,6 @@ public class Break : MonoBehaviour
     {
         TextMesh.text = liveBlock.ToString();
     }
+
+   
 }

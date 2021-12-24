@@ -7,19 +7,37 @@ public class Finish : MonoBehaviour
     public GameMenu GameMenu;
     public Stage Stage;
     public int score;
-
+    public GameObject Level;
    
+
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out Snake Snake))
+        {
+            Snake.GoFirework();
+
+        }
+    }
+
     void OnTriggerExit(Collider other)
     {
-        if (other.TryGetComponent(out Moving moving))
+            if (other.TryGetComponent(out Moving moving))
         {
          
             score = Stage.score;
             GameMenu.scoreLevel = score;
             GameMenu.GetScore();
-            GameMenu.OnFinish();
- 
+            moving.speed = 0;
+            moving.sensitivity = 0;
+            Level.SetActive(!Level.activeSelf);
+            //GameMenu.OnFinish();
+
         }
     }
-    
+
+   
+
+
 }

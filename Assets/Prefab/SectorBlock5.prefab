@@ -62,7 +62,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -110,6 +110,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextMesh: {fileID: 444999917433723483}
+  game: {fileID: 0}
+  CameraFollow: {fileID: 0}
+  Moving: {fileID: 0}
+  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
 --- !u!1 &1199160149520228209
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,7 +176,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -220,6 +224,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextMesh: {fileID: 6367068661006758939}
+  game: {fileID: 0}
+  CameraFollow: {fileID: 0}
+  Moving: {fileID: 0}
+  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
 --- !u!1 &2547543768076436184
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,7 +575,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -615,6 +623,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextMesh: {fileID: 8471872832308764498}
+  game: {fileID: 0}
+  CameraFollow: {fileID: 0}
+  Moving: {fileID: 0}
+  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
 --- !u!1 &3341841422158995458
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +689,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -725,6 +737,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextMesh: {fileID: 4753452995306185853}
+  game: {fileID: 0}
+  CameraFollow: {fileID: 0}
+  Moving: {fileID: 0}
+  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
 --- !u!1 &5257593330646366305
 GameObject:
   m_ObjectHideFlags: 0

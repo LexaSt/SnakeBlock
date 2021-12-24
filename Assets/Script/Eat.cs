@@ -10,7 +10,7 @@ public class Eat : MonoBehaviour
 
     void Start()
     {
-        quantityEat = Random.Range(1, 4);
+        quantityEat = Random.Range(4, 10);
         //print("Количество еды" + quantityEat);
     }
     void OnTriggerEnter(Collider other)
