@@ -13,7 +13,7 @@ public class Break : MonoBehaviour
 
     void Start()
     {   
-        liveBlock = Random.Range(5, 21);
+        liveBlock = Random.Range(4, 10);
         //print("Жизней у блока в начале " + liveBlock);
 
         game = FindObjectOfType<GameMenu>();
@@ -26,7 +26,7 @@ public class Break : MonoBehaviour
             if (collision.collider.TryGetComponent(out Moving moving))
             {
                 liveBlock -= 1;
-               // print("Жизней у блока " + liveBlock);
+                // print("Жизней у блока " + liveBlock);
                 moving.Bounce();
             }
 
@@ -35,15 +35,11 @@ public class Break : MonoBehaviour
                 if (Snake.snakeCircles.Count == 0)
                 {
                     game.Over();
-                   // moving.speed = 0;
-                   // moving.sensitivity = 0;
-
-                }
+                 }
                 else
                 {
                     Snake.DelTails();
                 }
-                
             }    
         }
         else if (liveBlock == 0)

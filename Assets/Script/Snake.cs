@@ -69,7 +69,6 @@ public class Snake : MonoBehaviour
         snakeCircles.RemoveAt(0);
         tails.RemoveAt(1);
         //print("Количество хвостов: " + snakeCircles.Count);
-        
     }
 
     

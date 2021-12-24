@@ -54,8 +54,6 @@ public class Moving : MonoBehaviour
         }
     }
 
-    public void Over()
-    { print("dsdfdfsdfsdsfdsd"); }
 
     private void Update()
     {

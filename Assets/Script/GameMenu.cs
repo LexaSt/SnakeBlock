@@ -7,6 +7,9 @@ public class GameMenu : MonoBehaviour
 {
     public Moving Moving;
     public Stage stage;
+    public int scoreLevel;
+    public int scoreAllLevel;
+    public Finish Finish;
     public enum game
     {
         Playing,
@@ -16,10 +19,18 @@ public class GameMenu : MonoBehaviour
 
     public game gameCurrent { get; private set; }
 
-    private void Start()
+
+    public int GetScore()
     {
-       Moving = FindObjectOfType<Moving>();
-        //Moving = GetComponent<Moving>();
+        scoreAllLevel = scoreLevel;//=40
+        scoreLevel = scoreAllLevel;//=40
+        return scoreAllLevel;
+        //print("scoreAllLevel " + scoreAllLevel);
+    }
+    public void Start()
+    {
+        
+        Moving = FindObjectOfType<Moving>();
     }
 
     public void Over()
@@ -38,10 +49,10 @@ public class GameMenu : MonoBehaviour
         if (gameCurrent != game.Playing) return;
 
         gameCurrent = game.Win;
+        GetScore();
         Moving.speed = 0;
         Moving.sensitivity = 0;
         Debug.Log("Win");
-        //stage.levelIndex+=1;
         LevelID++;
         ReloadLevel();
     }
@@ -49,7 +60,7 @@ public class GameMenu : MonoBehaviour
     public int LevelID
     {
         get => PlayerPrefs.GetInt(LevelIndexKey, 0);
-        private set
+        set
         {
             PlayerPrefs.SetInt(LevelIndexKey, value);
             PlayerPrefs.Save();
@@ -61,5 +72,5 @@ public class GameMenu : MonoBehaviour
        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-   
+  
 }

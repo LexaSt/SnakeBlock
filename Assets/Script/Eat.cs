@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class Eat : MonoBehaviour
 {
-    private int quantityEat;
+    public int quantityEat;
     public TextMesh TextMesh;
 
 
     void Start()
     {
         quantityEat = Random.Range(1, 4);
-        print("Количество еды" + quantityEat);
+        //print("Количество еды" + quantityEat);
     }
     void OnTriggerEnter(Collider other)
     {
