@@ -61,7 +61,7 @@ public class Stage : MonoBehaviour
         {
             AudioClip2.SetActive(!AudioClip2.activeSelf);
             level.localScale = new Vector3(1, 1, 20);
-            for (float i = 30; i <= 460; i += 10)
+            for (float i = 30; i <= 450; i += 10)
             {
                 GameObject blocks = Instantiate(prefabBlock[Random.Range(0, prefabBlock.Length)]);
                 blocks.transform.localPosition = new Vector3(2.747769f, -5.416524f, 20 + i);
@@ -82,7 +82,7 @@ public class Stage : MonoBehaviour
         {
             AudioClip3.SetActive(!AudioClip3.activeSelf);
             level.localScale = new Vector3(1, 1, 30);
-            for (float i = 30; i <= 700; i += 10)
+            for (float i = 30; i <= 680; i += 10)
             {
                 GameObject blocks = Instantiate(prefabBlock[Random.Range(0, prefabBlock.Length)]);
                 blocks.transform.localPosition = new Vector3(2.747769f, -5.416524f, 20 + i);

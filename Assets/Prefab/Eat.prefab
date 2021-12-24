@@ -109,6 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ba5d921832492940baeb1b116d27245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  quantityEat: 0
   TextMesh: {fileID: 2367418185256330758}
 --- !u!1 &2367418185256330759
 GameObject:
@@ -204,4 +205,4 @@ TextMesh:
   m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
   m_Color:
     serializedVersion: 2
-    rgba: 4280427138
+    rgba: 4278190080
