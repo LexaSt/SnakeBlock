@@ -15,10 +15,12 @@ public class Snake : MonoBehaviour
     public TextMesh TextMesh;
     public GameObject ParticleSystemBreackBlock;
     public GameObject fireWork;
+    private AudioSource AudioSource;
 
 
     void Start()
     {
+        AudioSource = GetComponent<AudioSource>();
         position = transform.position;
         tails.Add(position);
         firstPositionTail = new Vector3(position.x, position.y, position.z -1);
@@ -80,6 +82,7 @@ public class Snake : MonoBehaviour
 
     public void DestroyBlock()
     {
+        AudioSource.Play();
         StartCoroutine(DestroyCorotune());
     }
 

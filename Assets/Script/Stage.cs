@@ -15,13 +15,16 @@ public class Stage : MonoBehaviour
     public int levelIndex = 1;
     public Snake Snake;
     public int score;
+    public GameObject AudioClip1;
+    public GameObject AudioClip2;
+    public GameObject AudioClip3;
     
-
 
     private void Awake()
     {
         levelIndex = GameMenu.LevelID + 1;
         //print(levelIndex);
+       
     }
 
     private void Start()
@@ -33,6 +36,7 @@ public class Stage : MonoBehaviour
 
         if (levelIndex == 1) //30-230, step 10 = 20 prefab   -2.5f, 4f)
         {
+            AudioClip1.SetActive(!AudioClip1.activeSelf);
             level.localScale = new Vector3(1, 1, 10);
             for (float i = 30; i <= 210; i += 10)
             {
@@ -55,6 +59,7 @@ public class Stage : MonoBehaviour
 
         else if (levelIndex == 2) //30-460, step 10 = 43 prefab
         {
+            AudioClip2.SetActive(!AudioClip2.activeSelf);
             level.localScale = new Vector3(1, 1, 20);
             for (float i = 30; i <= 460; i += 10)
             {
@@ -75,7 +80,8 @@ public class Stage : MonoBehaviour
         }
         else if (levelIndex == 3) //30-700, step 10 = 67 prefab
         {
-             level.localScale = new Vector3(1, 1, 30);
+            AudioClip3.SetActive(!AudioClip3.activeSelf);
+            level.localScale = new Vector3(1, 1, 30);
             for (float i = 30; i <= 700; i += 10)
             {
                 GameObject blocks = Instantiate(prefabBlock[Random.Range(0, prefabBlock.Length)]);
@@ -107,7 +113,9 @@ public class Stage : MonoBehaviour
     private void Update()
     {  
         score = Snake.snakeCircles.Count;
-    
+        
+
+
     }
 
     
