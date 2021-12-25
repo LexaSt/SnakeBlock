@@ -11,14 +11,32 @@ public class Break : MonoBehaviour
     public CameraFollow CameraFollow;
     public Moving Moving;
     public Snake snake;
+    public Material SoftMaterial;
+    public Material HardMaterial;
+
+
    
+
+    private void UpdateMaterial()
+    {
+        Renderer sectorRenderer1 = GetComponent<Renderer>();
+        if (liveBlock <= 6)
+        {
+            sectorRenderer1.sharedMaterial = SoftMaterial;
+        }
+        else {
+
+            sectorRenderer1.sharedMaterial = HardMaterial;
+        }
+    }
 
     void Start()
     {   
-        liveBlock = Random.Range(4, 10);
+        liveBlock = Random.Range(3, 10);
         //print("Жизней у блока в начале " + liveBlock);
         snake = FindObjectOfType<Snake>();
         game = FindObjectOfType<GameMenu>();
+        UpdateMaterial();
     }
 
     void OnCollisionEnter(Collision collision)

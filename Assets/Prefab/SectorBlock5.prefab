@@ -113,7 +113,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &1199160149520228209
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +229,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &2547543768076436184
 GameObject:
   m_ObjectHideFlags: 0
@@ -626,7 +630,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &3341841422158995458
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,7 +746,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &5257593330646366305
 GameObject:
   m_ObjectHideFlags: 0

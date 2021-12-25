@@ -208,7 +208,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &3104801192142791564
 GameObject:
   m_ObjectHideFlags: 0
@@ -322,7 +324,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &3972571149257416545
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,7 +440,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &4985541329722485020
 GameObject:
   m_ObjectHideFlags: 0
@@ -550,7 +556,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &5039688514558375851
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +767,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &5444538415176894938
 GameObject:
   m_ObjectHideFlags: 0

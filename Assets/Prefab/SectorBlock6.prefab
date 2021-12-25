@@ -113,7 +113,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &1735519569027067752
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,7 +229,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &2040967597348282782
 GameObject:
   m_ObjectHideFlags: 0
@@ -446,7 +450,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2431757332080917441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.027769, y: 5.9665246, z: -16.049646}
+  m_LocalPosition: {x: -6.27, y: 5.9665246, z: -16.049646}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 3780213687840440488}
@@ -531,7 +535,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &5503929625824204317
 GameObject:
   m_ObjectHideFlags: 0
@@ -746,8 +752,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7056914045732993412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.7477689, y: -5.4165244, z: 33.38366}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 2.8378, y: -5.6117, z: 33.913}
+  m_LocalScale: {x: 1.033, y: 1.033, z: 1.033}
   m_Children:
   - {fileID: 8804213495254050995}
   - {fileID: 5653320252652269542}
@@ -965,7 +971,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &9022809274514349287
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +1002,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9022809274514349287}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5477688, y: 5.9665246, z: -16.049646}
+  m_LocalPosition: {x: -3.62, y: 5.9665246, z: -16.049646}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 7134324778833840640}
@@ -1079,4 +1087,6 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 2773407340996931046, guid: c0204a57d1df847409551ca1be9cda0e, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}

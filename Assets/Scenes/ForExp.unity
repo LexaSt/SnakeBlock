@@ -1479,7 +1479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1777059566}
-  smooth: 10
+  smooth: 11
   PlatformToCAmeraOfSet: {x: 1.268796, y: 11.75108, z: -14.45924}
 --- !u!114 &689355669
 MonoBehaviour:
@@ -2783,7 +2783,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 116
-  m_CollisionDetection: 2
+  m_CollisionDetection: 1
 --- !u!135 &1777059563
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2994,7 +2994,7 @@ MonoBehaviour:
   speed: 6
   sensRotate: 200
   sensitivity: 0.05
-  bounceSpeed: 60
+  bounceSpeed: 65
 --- !u!1 &1782749883
 GameObject:
   m_ObjectHideFlags: 0
@@ -3006,9 +3006,9 @@ GameObject:
   - component: {fileID: 1782749884}
   - component: {fileID: 1782749887}
   - component: {fileID: 1782749886}
-  - component: {fileID: 1782749885}
+  - component: {fileID: 1782749888}
   m_Layer: 5
-  m_Name: Text
+  m_Name: GameOver Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3033,23 +3033,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0.0779, y: -6.7471}
   m_SizeDelta: {x: 373.436, y: 108.76}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1782749885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1782749883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b2c5cd4f196e964ca351c0f0f37e2ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Text: {fileID: 1717446311}
-  ScoreAllLevel: {fileID: 1782749886}
-  Level: {fileID: 418368972}
-  Stage: {fileID: 2076450736}
-  GameMenu: {fileID: 263534598}
 --- !u!114 &1782749886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3092,6 +3075,24 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1782749883}
   m_CullTransparentMesh: 1
+--- !u!114 &1782749888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1782749883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ad62031998153242936185f48fee7bd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GameMenu: {fileID: 263534598}
+  Stage: {fileID: 2076450736}
+  score: 0
+  Level: {fileID: 878629344}
+  CanvasGameOver: {fileID: 316570001}
+  AllScore: {fileID: 1782749886}
 --- !u!1 &1807152919
 GameObject:
   m_ObjectHideFlags: 0
@@ -8672,6 +8673,7 @@ MonoBehaviour:
   - {fileID: 5729850022656769995, guid: c9adb283c95881b4bbbd4233193e2361, type: 3}
   - {fileID: 5937088902445223147, guid: b1f2ce17b9a672f469bdbc27bea8f38b, type: 3}
   - {fileID: 8778600194612595135, guid: 2990bdfc424c4004da41ccc39ac8c2b9, type: 3}
+  - {fileID: 7056914045732993412, guid: 62914d0505fe96047a5fb9ced37a1d8a, type: 3}
   - {fileID: 8363998192570689790, guid: 7d42df560b87cd543bef78b45aa6e645, type: 3}
   prefabEat:
   - {fileID: 2367418184521441674, guid: 6f27970968ec03b4eac815edd5d70a64, type: 3}

@@ -114,7 +114,9 @@ MonoBehaviour:
   game: {fileID: 0}
   CameraFollow: {fileID: 0}
   Moving: {fileID: 0}
-  ParticleSystemBreackBlock: {fileID: 8380355881199380134, guid: 94da95ee806f3cd4091a6bd88b57df13, type: 3}
+  snake: {fileID: 0}
+  SoftMaterial: {fileID: 2100000, guid: d34a0493cdb9de948bd46ae1509611a0, type: 2}
+  HardMaterial: {fileID: 2100000, guid: 759a4647ae6222f499ca11e1e49f74e3, type: 2}
 --- !u!1 &4229416437274496616
 GameObject:
   m_ObjectHideFlags: 0
