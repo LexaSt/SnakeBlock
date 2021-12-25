@@ -15,7 +15,7 @@ public class TextCanvas : MonoBehaviour
     void Update()
     {
         Text.text = "Current Level: "  + (GameMenu.LevelID+1).ToString();
-        ScoreAllLevel.text = "Score: " + GameMenu.scoreAllLevel.ToString();
+        ScoreAllLevel.text = "Score: " + GameMenu.AllLevelsScore.ToString();
         Level.text = "Current Level Score: " + Stage.score.ToString();
     }
 }

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Finish : MonoBehaviour
 {
@@ -8,7 +9,9 @@ public class Finish : MonoBehaviour
     public Stage Stage;
     public int score;
     public GameObject Level;
-   
+    public GameObject CanvasGameOver;
+    public Text AllScore;
+
 
 
 
@@ -17,23 +20,26 @@ public class Finish : MonoBehaviour
         if (other.TryGetComponent(out Snake Snake))
         {
             Snake.GoFirework();
-
         }
     }
 
     void OnTriggerExit(Collider other)
     {
-            if (other.TryGetComponent(out Moving moving))
+        if (other.TryGetComponent(out Moving moving))
         {
-         
             score = Stage.score;
-            GameMenu.scoreLevel = score;
-            GameMenu.GetScore();
             moving.speed = 0;
             moving.sensitivity = 0;
-            Level.SetActive(!Level.activeSelf);
-            //GameMenu.OnFinish();
-
+            if (Stage.levelIndex < 3)
+            {
+                Level.SetActive(!Level.activeSelf);
+            }
+            else
+            {
+                score = Stage.score + GameMenu.AllLevelsScore;
+                AllScore.text = "Score: " + score.ToString();
+                CanvasGameOver.SetActive(!CanvasGameOver.activeSelf); 
+            }
         }
     }
 

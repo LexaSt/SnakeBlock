@@ -7,32 +7,41 @@ public class Moving : MonoBehaviour
 {
     public Rigidbody player;
     private Vector3 previosMousePosition;
-  
+    private bool _nonTaped;
     public float speed;
     public float sensRotate;
     public float sensitivity;
 
     public float bounceSpeed=50;
-   
- 
+
+
 
 
     public void MouseControl()
     {
-        if (Input.GetMouseButton(0))
+        if (_nonTaped) previosMousePosition = Input.mousePosition;
         {
-            Vector3 delta = Input.mousePosition - previosMousePosition;
-            player.transform.position = player.transform.position + new Vector3(delta.x * sensitivity,0,0);
-            if (player.transform.position.x >= 7)
-            { 
-                player.transform.position = new Vector3(7f, 0, player.transform.position.z);
-            }
-            if (player.transform.position.x <= -7)
+            if (Input.GetMouseButton(0))
             {
-                player.transform.position = new Vector3(-7f, 0, player.transform.position.z);
+                Vector3 delta = Input.mousePosition - previosMousePosition;
+                player.transform.position = player.transform.position + new Vector3(delta.x * sensitivity, 0, 0);
+                previosMousePosition = Input.mousePosition;
+                _nonTaped = false;
+                if (player.transform.position.x >= 7)
+                {
+                    player.transform.position = new Vector3(7f, 0, player.transform.position.z);
+                }
+                if (player.transform.position.x <= -7)
+                {
+                    player.transform.position = new Vector3(-7f, 0, player.transform.position.z);
+                }
             }
+            else
+            { 
+                _nonTaped = false; 
+            }
+            previosMousePosition = Input.mousePosition;
         }
-        previosMousePosition = Input.mousePosition;   
     }
    
     public void Bounce()

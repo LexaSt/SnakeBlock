@@ -53,7 +53,7 @@ public class Stage : MonoBehaviour
                     eats.transform.localPosition = new Vector3(Random.Range(-2.5f, 4f), 0f, -21f + i);
                 }
 
-                //Moving.speed = 10f;
+                Moving.speed = 6f;
             }
         }
 
@@ -75,7 +75,7 @@ public class Stage : MonoBehaviour
                 {
                     eats.transform.localPosition = new Vector3(Random.Range(-2.5f, 4f), 0f, -21f + i);
                 }
-                //Moving.speed = 10f;
+                Moving.speed = 8f;
             }
         }
         else if (levelIndex == 3) //30-700, step 10 = 67 prefab
@@ -96,7 +96,7 @@ public class Stage : MonoBehaviour
                 {
                     eats.transform.localPosition = new Vector3(Random.Range(-2.5f, 4f), 0f, -21f + i);
                 }
-                //Moving.speed = 10f;
+                Moving.speed = 10f;
             }
         }
         else
@@ -107,15 +107,13 @@ public class Stage : MonoBehaviour
             Destroy(second);
             Debug.Log("Game over");
             GameMenu.LevelID = -1;
+            GameMenu.AllLevelsScore = -GameMenu.scoreLevel;
             GameMenu.OnFinish();
         }
     }
     private void Update()
     {  
         score = Snake.snakeCircles.Count;
-        
-
-
     }
 
     
